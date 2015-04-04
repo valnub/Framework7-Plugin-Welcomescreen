@@ -2,7 +2,7 @@
 
 ## Just a quick plugin for Framework 7
 
-This will display a fullscreen swipeable modal window to guide the user through a welcome screen.
+This will display a fullscreen swipeable modal window to guide the user through a welcome screen (as requested here http://www.idangero.us/framework7/forum/#!/framework7/feature-requests%23request-centered-large-mod).
 
 ## Live demo
 
