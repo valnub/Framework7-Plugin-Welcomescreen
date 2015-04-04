@@ -14,7 +14,7 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
 ## Setup
 
-1) Make sure you have Swiper installed. See /example folder on how to do it and read the docs on http://www.idangero.us/swiper/#.VR_1mlz5JoI
+1) Copy css and js for Swipe into your project and reference them in your html if you haven't done already.
 
 2) Copy welcomescreen.css and welcomescreen.js to your project and reference them:
 
@@ -27,7 +27,7 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
 ```javascript
 var app = new Framework7();
-var welcomescreen = myapp.welcomescreen(options);
+var welcomescreen = app.welcomescreen(options);
 ```
 
 4) Create some slides. You can use any html as parameter "contenthtml".
