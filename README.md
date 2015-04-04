@@ -8,30 +8,16 @@ This will display a fullscreen swipeable modal window to guide the user through 
 
 http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
-## Dependencies
-
-- Swiper (http://www.idangero.us/swiper/#.VR_1mlz5JoI)
-
 ## Setup
 
-1) Copy css and js for Swiper into your project and reference them in your html if you haven't done already (Get the files here http://www.idangero.us/swiper/#.VR_1mlz5JoI).
-
-2) Copy welcomescreen.css and welcomescreen.js to your project and reference them:
+1) Copy welcomescreen.css and welcomescreen.js to your project and reference them:
 
 ```html
 <link rel="stylesheet" href="welcomescreen.css">
 <script src="welcomescreen.js"></script>
 ```
 
-3) Import welcomescreen lib in javascript
-
-```javascript
-var app = new Framework7();
-var welcomescreen_options = {};
-var welcomescreen = app.welcomescreen(welcomescreen_options);
-```
-
-4) Create some slides. You can use any html as parameter "contenthtml".
+2) Define slides. You can use any html as parameter "contenthtml".
 
 ```javascript
 var welcomescreen_slides = [
@@ -54,18 +40,19 @@ var welcomescreen_slides = [
 ];
 ```
 
+3) Initialize
+
+```javascript
+var app = new Framework7();
+app.welcomescreen(welcomescreen_slides);
+```
+
 I also recommend to set a small margin-top or content will collide with close button:
 
 ```css
 .welcomecontent{
   margin-top: 60px;
 }
-```
-
-5) Initialize welcome screen
-
-```javascript
-welcomescreen.addSlides(welcomescreen_slides);
 ```
 
 That's it :-)
