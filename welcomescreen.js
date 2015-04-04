@@ -10,67 +10,52 @@
 Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) {
   'use strict';
   
-  var Welcomescreen = function (options) {
+  var Welcomescreen = function (slides, options) {
     var self = this,
       $$ = Dom7,
-      slides,
       swiper,
-      $swiper;
+      $swiperContainer,
+      $closebtn,
+      $wscreen;
     
     function initSwiper() {
-      swiper = new Swiper('.welcomescreen-swiper', {
-        // Optional parameters
+      swiper = new Swiper('.swiper-container', {
         direction: 'horizontal',
-        loop: false,
-
-        // If we need pagination
-        pagination: '.welcomescreen-swiper-pagination'
+        loop: false
       });
     }
     
-    this.addSlides = function (slidesarray) {
-      var i = 0,
-        $swiperwrapper;
+    function addSlides() {
+      var i,
+        $swiperwrapper = $swiperContainer.find('.swiper-wrapper');
       
-      slides = slidesarray;
-      $swiperwrapper = $swiper.find('.swiper-wrapper');
-      
-      for (i in slidesarray) {
-        $swiperwrapper.append($$('<div class="swiper-slide">').html(slidesarray[i].contenthtml));
+      for (i = 0; i < slides.length; i = i + 1) {
+        $swiperwrapper.append($$('<div class="swiper-slide">').html(slides[i].contenthtml));
       }
       
       initSwiper();
-    };
+    }
+    
+    function removeWelcomeScreen() {
+      $closebtn.off('click');
+      swiper.destroy();
+      $wscreen.remove();
+    }
     
     // Init
     (function () {
-      // Create box
-      var $wscreen = $$('<div class="welcomescreen-container">'),
-        clientLeft,
-        $closebtn = $$('<div class="welcomescreen-closebtn">');
+      var clientLeft;
       
-      $swiper = $$('<div class="welcomescreen-swiper">').html('<div class="swiper-wrapper"></div><div class="swiper-pagination"></div>');
-      
-      // Add content
-      // TODO
-      $wscreen.html('');
-      
+      $wscreen = $$('<div class="welcomescreen-container">');
+      $closebtn = $$('<div class="welcomescreen-closebtn">');
+      $swiperContainer = $$('<div class="welcomescreen-swiper swiper-container">').html('<div class="swiper-wrapper"></div>');
       $wscreen.append($closebtn);
-      $wscreen.append($swiper);
-      
-      $closebtn.html('x').click(
-        function () {
-          $wscreen.remove();
-        }
-      );
-      
-      // Add to DOM
+      $wscreen.append($swiperContainer);
+      $closebtn.html('x').click(removeWelcomeScreen);
       $$('body').append($wscreen);
       
-      // Hide box on click
-      $wscreen.find('.welcomescreen-closebtn').click(function () {
-        $wscreen.remove();
-      });
+      addSlides();
+      
     }());
     
     return this;

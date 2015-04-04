@@ -10,10 +10,9 @@ myapp.pages.IndexPageController = function (myapp, $$) {
   // Init method
   (function () {
 
-    // Use toast plugin
     var options = {},
       welcomescreen_slides,
-      welcomescreen = myapp.welcomescreen(options);
+      welcomescreen;
     
     welcomescreen_slides = [
       {
@@ -34,8 +33,8 @@ myapp.pages.IndexPageController = function (myapp, $$) {
       }
     ];
     
-    welcomescreen.addSlides(welcomescreen_slides);
-
+    welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
+    
   }());
 
 };
