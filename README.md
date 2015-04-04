@@ -14,7 +14,7 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
 ## Setup
 
-1) Copy css and js for Swipe into your project and reference them in your html if you haven't done already.
+1) Copy css and js for Swiper into your project and reference them in your html if you haven't done already (Get the files here http://www.idangero.us/swiper/#.VR_1mlz5JoI).
 
 2) Copy welcomescreen.css and welcomescreen.js to your project and reference them:
 
