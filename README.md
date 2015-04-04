@@ -27,7 +27,8 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
 ```javascript
 var app = new Framework7();
-var welcomescreen = app.welcomescreen(options);
+var welcomescreen_options = {};
+var welcomescreen = app.welcomescreen(welcomescreen_options);
 ```
 
 4) Create some slides. You can use any html as parameter "contenthtml".
