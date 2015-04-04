@@ -54,6 +54,14 @@ var welcomescreen_slides = [
 ];
 ```
 
+I also recommend to set a small margin-top or content will collide with close button:
+
+```css
+.welcomecontent{
+  margin-top: 60px;
+}
+```
+
 5) Initialize welcome screen
 
 ```javascript
