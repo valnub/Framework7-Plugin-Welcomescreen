@@ -35,8 +35,8 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       slides = slidesarray;
       $swiperwrapper = $swiper.find('.swiper-wrapper');
       
-      for (var i in slidesarray){
-        $swiperwrapper.append($$(slidesarray[i].contenthtml).addClass('swiper-slide'));
+      for (i in slidesarray) {
+        $swiperwrapper.append($$('<div class="swiper-slide">').html(slidesarray[i].contenthtml));
       }
       
       initSwiper();
