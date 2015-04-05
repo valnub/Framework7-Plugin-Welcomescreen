@@ -17,42 +17,56 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 <script src="welcomescreen.js"></script>
 ```
 
-2) Define slides. You can use any html as parameter "contenthtml".
+2) Define slides
 
 ```javascript
 var welcomescreen_slides = [
   {
     id: 0,
-    contenthtml: '<div class="welcomecontent">Welcome user, this is slide 1<br>Swipe right to see next tutorial page</div>'
+    picture: '<div class="tutorialicon">♥</div>',
+    text: 'Welcome to this tutorial. In the next steps we will guide you through a manual that will teach you how to use this app.'
   },
   {
     id: 1,
-    contenthtml: '<div class="welcomecontent">This is slide 2</div>'
+    picture: '<div class="tutorialicon">✲</div>',
+    text: 'This is slide 2'
   },
   {
     id: 2,
-    contenthtml: '<div class="welcomecontent">This is slide 3</div>'
+    picture: '<div class="tutorialicon">♫</div>',
+    text: 'This is slide 3'
   },
   {
     id: 3,
-    contenthtml: '<div class="welcomecontent">This is slide 4</div>'
+    picture: '<div class="tutorialicon">☆</div>',
+    text: 'Thanks for reading! Enjoy this app.<br><br><a id="tutorial-close-btn" href="#">End Tutorial</a>'
   }
 ];
 ```
 
-3) Initialize
+Parameters
+
+- *id* Set an id for this slide
+- *picture* Set free html here
+- *text* You *can* set html here but I recommend using just plain text
+
+3) Initialize & options
 
 ```javascript
-var app = new Framework7();
-app.welcomescreen(welcomescreen_slides);
+var myapp = new Framework7();
+var options = {
+  'bgcolor': '#0da6ec',
+  'fontcolor': '#fff'
+}
+var welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
 ```
 
-I also recommend to set a small margin-top or content will collide with close button:
+4) How to close it
 
-```css
-.welcomecontent{
-  margin-top: 60px;
-}
+```javascript
+$$('#some-button').click(function () {
+  welcomescreen.close();
+});
 ```
 
 That's it :-)
