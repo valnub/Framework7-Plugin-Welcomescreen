@@ -12,17 +12,23 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
   // Global Vars
   var $$ = Dom7,
       t7 = Template7;
-      
+
+  // Click handler to close welcomescreen
+  $$(document).on('click', '.close-welcomescreen', function (e) {
+    e.preventDefault();
+    var $wscreen = $$(this).parents('.welcomescreen-container');
+    if ($wscreen.length > 0 && $wscreen[0].f7Welcomescreen) $wscreen[0].f7Welcomescreen.close();
+  });
   // Class
   var Welcomescreen = function (slides, options) {
     var self = this;
 
     var defaults = {
-      closeButtonText : 'skip',
-      closeButton: true,
-      cssClass: '',
-      pagination: true,
-      loop: false
+      closeButton: true, //enabled/disable close button
+      closeButtonText : 'skip', //close button text
+      cssClass: '', //additional class on container
+      pagination: true,//swiper pagination
+      loop: false, //swiper loop
     };
     options = options || {};
     for (var def in defaults) {
