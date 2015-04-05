@@ -31,7 +31,7 @@
   margin-top: 30%;
 }
 
-.welcomescreen-text{
+.welcomescreen-text {
   position:absolute;
   bottom: 65px;
   left: 0;
@@ -39,6 +39,9 @@
   padding-left: 20px;
   padding-right: 20px;
   text-align:center;
+}
+.welcomescreen-content {
+  padding: 15px;
 }
 
 .welcomescreen-container .swiper-pagination-bullet{
