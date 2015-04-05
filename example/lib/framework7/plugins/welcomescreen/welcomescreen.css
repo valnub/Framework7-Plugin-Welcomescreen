@@ -7,7 +7,7 @@
   background-color: #fff;
   z-index: 9997;
   color: #666;
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'HelveticaNeue', 'Helvetiva-Neue', arial, sans-serif;
 }
 
@@ -15,22 +15,42 @@
   top: 15px;
   right: 15px;
   position: absolute;
-  font-size: 30px;
-  border: 3px solid #999;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  text-align: center;
-  padding-top: 0px;
-  color: #999;
-  line-height: 35px;
+  text-align: right;
   z-index: 9998;
+  font-family: 'HelveticaNeue', 'Helvetiva-Neue', arial, sans-serif;
+  font-size: 14px;
 }
 
 .welcomescreen-swiper {
   position:relative;
   width: 100%;
   height: 100%;
-  left: 10px;
-  right: 10px;
-}   
+}
+
+.welcomescreen-picture{
+  width: 100%;
+  text-align: center;
+  margin-top: 30%;
+}
+
+.welcomescreen-text{
+  position:absolute;
+  bottom: 65px;
+  left: 0;
+  right: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align:center;
+}
+
+.welcomescreen-container .swiper-pagination-bullet{
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.welcomescreen-container .swiper-pagination-bullet-active{
+  background: #fff;
+}
+
+.swiper-container-horizontal>.swiper-pagination{
+  bottom: 20px;
+}

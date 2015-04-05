@@ -2,70 +2,75 @@
 
 ## Just a quick plugin for Framework 7
 
-This will display a fullscreen swipeable modal window to guide the user through a welcome screen.
+This will display a fullscreen swipeable modal window to guide the user through a welcome screen (as requested here http://www.idangero.us/framework7/forum/#!/framework7/feature-requests%23request-centered-large-mod).
+
+## Screenshot
+
+![Welcome screen](https://raw.githubusercontent.com/valnub/Framework7-Plugin-Welcomescreen/master/screens/screen1.png)
 
 ## Live demo
 
 http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
-## Dependencies
-
-- Swiper (http://www.idangero.us/swiper/#.VR_1mlz5JoI)
-
 ## Setup
 
-1) Copy css and js for Swiper into your project and reference them in your html if you haven't done already (Get the files here http://www.idangero.us/swiper/#.VR_1mlz5JoI).
-
-2) Copy welcomescreen.css and welcomescreen.js to your project and reference them:
+1) Copy welcomescreen.css and welcomescreen.js to your project and reference them:
 
 ```html
 <link rel="stylesheet" href="welcomescreen.css">
 <script src="welcomescreen.js"></script>
 ```
 
-3) Import welcomescreen lib in javascript
-
-```javascript
-var app = new Framework7();
-var welcomescreen_options = {};
-var welcomescreen = app.welcomescreen(welcomescreen_options);
-```
-
-4) Create some slides. You can use any html as parameter "contenthtml".
+2) Define slides
 
 ```javascript
 var welcomescreen_slides = [
   {
     id: 0,
-    contenthtml: '<div class="welcomecontent">Welcome user, this is slide 1<br>Swipe right to see next tutorial page</div>'
+    picture: '<div class="tutorialicon">♥</div>',
+    text: 'Welcome to this tutorial. In the next steps we will guide you through a manual that will teach you how to use this app.'
   },
   {
     id: 1,
-    contenthtml: '<div class="welcomecontent">This is slide 2</div>'
+    picture: '<div class="tutorialicon">✲</div>',
+    text: 'This is slide 2'
   },
   {
     id: 2,
-    contenthtml: '<div class="welcomecontent">This is slide 3</div>'
+    picture: '<div class="tutorialicon">♫</div>',
+    text: 'This is slide 3'
   },
   {
     id: 3,
-    contenthtml: '<div class="welcomecontent">This is slide 4</div>'
+    picture: '<div class="tutorialicon">☆</div>',
+    text: 'Thanks for reading! Enjoy this app.<br><br><a id="tutorial-close-btn" href="#">End Tutorial</a>'
   }
 ];
 ```
 
-I also recommend to set a small margin-top or content will collide with close button:
+Parameters
 
-```css
-.welcomecontent{
-  margin-top: 60px;
-}
-```
+- *id* Set an id for this slide
+- *picture* Set free html here
+- *text* You *can* set html here but I recommend using just plain text
 
-5) Initialize welcome screen
+3) Initialize & options
 
 ```javascript
-welcomescreen.addSlides(welcomescreen_slides);
+var myapp = new Framework7();
+var options = {
+  'bgcolor': '#0da6ec',
+  'fontcolor': '#fff'
+}
+var welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
+```
+
+4) How to close it
+
+```javascript
+$$('#some-button').click(function () {
+  welcomescreen.close();
+});
 ```
 
 That's it :-)
