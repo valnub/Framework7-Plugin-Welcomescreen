@@ -9,12 +9,13 @@
  */
 Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) {
   'use strict';
-
-  
-  var Welcomescreen = function (slides, options) {
-    var self = this,
-      $$ = Dom7,
+  // Global Vars
+  var $$ = Dom7,
       t7 = Template7;
+      
+  // Class
+  var Welcomescreen = function (slides, options) {
+    var self = this;
 
     var defaults = {
       closeButtonText : 'skip',
