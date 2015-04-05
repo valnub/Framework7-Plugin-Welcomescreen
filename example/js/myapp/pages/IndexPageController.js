@@ -40,10 +40,14 @@ myapp.pages.IndexPageController = function (myapp, $$) {
       }
     ];
 
-    welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
+    window.welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
     
     $$('#tutorial-close-btn').click(function () {
       welcomescreen.close();
+    });
+
+    $$('#tutorial-open-btn').click(function () {
+      welcomescreen.open();  
     });
     
   }());
