@@ -117,10 +117,10 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
     // Close
     self.close = function () {
       // Destroy Swiper
-      self.swiper.destroy();
+      if (self.swiper) self.swiper.destroy(true);
       // Remove from Dom
-      self.container.remove();
-      self.container = self.swiperContainer = null;
+      if (self.container) self.container.remove();
+      self.container = self.swiperContainer = self.swiper = null;
     };
 
     // Open on init
