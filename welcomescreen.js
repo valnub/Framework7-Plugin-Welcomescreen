@@ -50,14 +50,15 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
           '<div class="swiper-wrapper">' +
             '{{#each slides}}' +
             '<div class="swiper-slide" {{#if id}}id="{{id}}"{{/if}}>' +
-              '{{#if picture}}' +
-                '<div class="welcomescreen-picture">{{picture}}</div>' +
-              '{{/if}}' +
-              '{{#if text}}' +
-                '<div class="welcomescreen-text">{{text}}</div>' +
-              '{{/if}}' +
               '{{#if content}}' +
                 '<div class="welcomescreen-content">{{content}}</div>' +
+              '{{else}}' +
+                '{{#if picture}}' +
+                  '<div class="welcomescreen-picture">{{picture}}</div>' +
+                '{{/if}}' +
+                '{{#if text}}' +
+                  '<div class="welcomescreen-text">{{text}}</div>' +
+                '{{/if}}' +
               '{{/if}}' +
             '</div>' +
             '{{/each}}' +
