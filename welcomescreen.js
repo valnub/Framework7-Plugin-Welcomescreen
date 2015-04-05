@@ -29,6 +29,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       cssClass: '', //additional class on container
       pagination: true,//swiper pagination
       loop: false, //swiper loop
+      open: true, //open welcome screen on init
     };
     options = options || {};
     for (var def in defaults) {
@@ -123,7 +124,9 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
     };
 
     // Open on init
-    self.open();
+    if (options.open) {
+      self.open();
+    }
     
     // Return instance
     return self;
