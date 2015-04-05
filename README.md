@@ -4,6 +4,10 @@
 
 This will display a fullscreen swipeable modal window to guide the user through a welcome screen (as requested here http://www.idangero.us/framework7/forum/#!/framework7/feature-requests%23request-centered-large-mod).
 
+## Screenshot
+
+![Welcome screen](https://raw.githubusercontent.com/valnub/Framework7-Plugin-Welcomescreen/master/screens/screen1.png)
+
 ## Live demo
 
 http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
