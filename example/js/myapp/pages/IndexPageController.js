@@ -10,30 +10,41 @@ myapp.pages.IndexPageController = function (myapp, $$) {
   // Init method
   (function () {
 
-    var options = {},
+    var options = {
+      'bgcolor': '#0da6ec',
+      'fontcolor': '#fff'
+    },
       welcomescreen_slides,
       welcomescreen;
     
     welcomescreen_slides = [
       {
         id: 0,
-        contenthtml: '<div class="welcomecontent">Welcome user, this is slide 1<br>Swipe right to see next tutorial page</div>'
+        picture: '<div class="tutorialicon">♥</div>',
+        text: 'Welcome to this tutorial. In the next steps we will guide you through a manual that will teach you how to use this app.'
       },
       {
         id: 1,
-        contenthtml: '<div class="welcomecontent">This is slide 2</div>'
+        picture: '<div class="tutorialicon">✲</div>',
+        text: 'This is slide 2'
       },
       {
         id: 2,
-        contenthtml: '<div class="welcomecontent">This is slide 3</div>'
+        picture: '<div class="tutorialicon">♫</div>',
+        text: 'This is slide 3'
       },
       {
         id: 3,
-        contenthtml: '<div class="welcomecontent">This is slide 4</div>'
+        picture: '<div class="tutorialicon">☆</div>',
+        text: 'Thanks for reading! Enjoy this app.<br><br><a id="tutorial-close-btn" href="#">End Tutorial</a>'
       }
     ];
-    
+
     welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
+    
+    $$('#tutorial-close-btn').click(function () {
+      welcomescreen.close();
+    });
     
   }());
 
