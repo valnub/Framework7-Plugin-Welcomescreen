@@ -1,14 +1,13 @@
-.welcomescreen-container{
-  position: fixed;
+.welcomescreen-container {
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: #fff;
-  z-index: 9997;
+  z-index: 10500;
   color: #666;
   font-size: 16px;
-  font-family: 'HelveticaNeue', 'Helvetiva-Neue', arial, sans-serif;
 }
 
 .welcomescreen-closebtn{
@@ -17,7 +16,6 @@
   position: absolute;
   text-align: right;
   z-index: 9998;
-  font-family: 'HelveticaNeue', 'Helvetiva-Neue', arial, sans-serif;
   font-size: 14px;
 }
 
@@ -33,7 +31,7 @@
   margin-top: 30%;
 }
 
-.welcomescreen-text{
+.welcomescreen-text {
   position:absolute;
   bottom: 65px;
   left: 0;
@@ -41,6 +39,9 @@
   padding-left: 20px;
   padding-right: 20px;
   text-align:center;
+}
+.welcomescreen-content {
+  padding: 15px;
 }
 
 .welcomescreen-container .swiper-pagination-bullet{
@@ -53,4 +54,8 @@
 
 .swiper-container-horizontal>.swiper-pagination{
   bottom: 20px;
+}
+
+html.with-statusbar-overlay .welcomescreen-container{
+    top: 20px;
 }
