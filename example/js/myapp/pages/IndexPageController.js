@@ -36,18 +36,18 @@ myapp.pages.IndexPageController = function (myapp, $$) {
       {
         id: 'slide3',
         picture: '<div class="tutorialicon">☆</div>',
-        text: 'Thanks for reading! Enjoy this app.<br><br><a id="tutorial-close-btn" href="#">End Tutorial</a>'
+        text: 'Thanks for reading! Enjoy this app.<br><br><a class="tutorial-close-btn" href="#">End Tutorial</a>'
       }
 
     ];
 
     welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
     
-    $$('#tutorial-close-btn').click(function () {
+    $$(document).on('click', '.tutorial-close-btn', function () {
       welcomescreen.close();
     });
 
-    $$('#tutorial-open-btn').click(function () {
+    $$('.tutorial-open-btn').click(function () {
       welcomescreen.open();  
     });
     
