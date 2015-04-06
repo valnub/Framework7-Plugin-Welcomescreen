@@ -76,7 +76,7 @@ Available options (if not set, default will be used)
 - **loop** (Default: false) Swiper loop
 - **open** (Default: true) Open welcome screen on init
 
-4) API
+## API
 
 The following methods are available on a welcomescreen instance
 
@@ -85,9 +85,8 @@ welcomescreen.open();  // Open the screen
 welcomescreen.close(); // Closes it
 ```
 
-That's it :-)
-Enjoy
-
-Made with <3 by www.timo-ernst.net
+## Credits
 
 Thanks to Vladi for improvements http://www.idangero.us
+
+Made with <3 by www.timo-ernst.net
