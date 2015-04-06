@@ -26,22 +26,22 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 ```javascript
 var welcomescreen_slides = [
   {
-    id: 0,
+    id: 'slide0',
     picture: '<div class="tutorialicon">♥</div>',
     text: 'Welcome to this tutorial. In the next steps we will guide you through a manual that will teach you how to use this app.'
   },
   {
-    id: 1,
+    id: 'slide1',
     picture: '<div class="tutorialicon">✲</div>',
     text: 'This is slide 2'
   },
   {
-    id: 2,
+    id: 'slide2',
     picture: '<div class="tutorialicon">♫</div>',
     text: 'This is slide 3'
   },
   {
-    id: 3,
+    id: 'slide3',
     picture: '<div class="tutorialicon">☆</div>',
     text: 'Thanks for reading! Enjoy this app.<br><br><a id="tutorial-close-btn" href="#">End Tutorial</a>'
   }
@@ -65,15 +65,28 @@ var options = {
 var welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
 ```
 
-4) How to close it
+Available options (if not set, default will be used)
+
+- **bgcolor** Set background color
+- **fontcolor** Set font color
+- **closeButton** (Default: true) Enabled/disable close button
+- **closeButtonText** (Default: 'Skip') Close button text
+- **cssClass** (Default: '') Additional class on container
+- **pagination** (Default: true) Swiper pagination
+- **loop** (Default: false) Swiper loop
+- **open** (Default: true) Open welcome screen on init
+
+4) API
+
+The following methods are available on a welcomescreen instance
 
 ```javascript
-$$('#some-button').click(function () {
-  welcomescreen.close();
-});
+welcomescreen.open();  // Open the screen
+welcomescreen.close(); // Closes it
 ```
 
 That's it :-)
 Enjoy
 
 Made with <3 by www.timo-ernst.net
+Thanks to Vladi for improvements http://www.idangero.us
