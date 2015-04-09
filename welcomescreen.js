@@ -80,7 +80,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
      * @private
      */
     function defineDefaultTemplate() {
-      defaultTemplate = '<div class="welcomescreen-container {{#if options.cssClass}}option.cssClass{{/if}}">' +
+      defaultTemplate = '<div class="welcomescreen-container {{#if options.cssClass}}{{options.cssClass}}{{/if}}">' +
           '{{#if options.closeButton}}' +
           '<div class="welcomescreen-closebtn close-welcomescreen">{{options.closeButtonText}}</div>' +
           '{{/if}}' +
@@ -153,6 +153,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       $$('body').append(container);
       initSwiper();
       container[0].f7Welcomescreen = self;
+      if (typeof options.onOpened === 'function') { options.onOpened(); }
     };
 
     /**
@@ -164,7 +165,39 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
     self.close = function () {
       if (swiper) { swiper.destroy(true); }
       if (container) { container.remove(); }
-      container = swiperContainer = swiper = null;
+      container = swiperContainer = swiper = undefined;
+      if (typeof options.onClosed === 'function') { options.onClosed(); }
+    };
+    
+   /**
+     * Shows the next slide
+     *
+     * @public
+     * @memberof module:Framework7/prototype/plugins/welcomescreen
+     */
+    self.next = function () {
+      if (swiper) { swiper.slideNext(); }
+    };
+    
+   /**
+     * Shows the previous slide
+     *
+     * @public
+     * @memberof module:Framework7/prototype/plugins/welcomescreen
+     */
+    self.previous = function () {
+      if (swiper) { swiper.slidePrev(); }
+    };
+    
+   /**
+     * Goes to the desired slide
+     *
+     * @param {number} index The slide to show
+     * @public
+     * @memberof module:Framework7/prototype/plugins/welcomescreen
+     */
+    self.slideTo = function (index) {
+      if (swiper) { swiper.slideTo(index); }
     };
     
     /**
