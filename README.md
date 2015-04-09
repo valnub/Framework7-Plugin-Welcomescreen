@@ -75,14 +75,19 @@ Available options (if not set, default will be used)
 - **pagination** (Default: true) Swiper pagination
 - **loop** (Default: false) Swiper loop
 - **open** (Default: true) Open welcome screen on init
+- **onOpened** (Default: none) Callback function when welcomescreen is opened
+- **onClosed** (Default: none) Callback function when welcomescreen is closed
 
 ## API
 
 The following methods are available on a welcomescreen instance
 
 ```javascript
-welcomescreen.open();  // Open the screen
-welcomescreen.close(); // Closes it
+welcomescreen.open();         // Open the screen
+welcomescreen.close();        // Closes it
+welcomescreen.next();         // Go to next slide
+welcomescreen.previous();     // Go to previous slide
+welcomescreen.slideTo(i); // Go to slide with index i
 ```
 
 ## Credits
