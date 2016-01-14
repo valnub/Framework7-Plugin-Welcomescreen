@@ -8,7 +8,7 @@ myapp.init = (function () {
   
   var exports = {};
   
-  (function () {
+  document.addEventListener("DOMContentLoaded", function(event) { 
     // Initialize app
     var fw7App = new Framework7(),
       fw7ViewOptions = {
@@ -16,11 +16,9 @@ myapp.init = (function () {
         domCache: true
       },
       mainView = fw7App.addView('.view-main', fw7ViewOptions),
-      ipc,
-      $$ = Dom7;
-    
-    ipc = new myapp.pages.IndexPageController(fw7App, $$);
-  }());
+      $$ = Dom7,
+      ipc = new myapp.pages.IndexPageController(fw7App, $$);
+  });
   
   return exports;
 

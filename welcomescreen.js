@@ -10,7 +10,6 @@
  */
 Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) {
   'use strict';
-  
   // Variables in module scope
   var $$ = Dom7,
     t7 = Template7,

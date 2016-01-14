@@ -9,7 +9,6 @@ myapp.pages.IndexPageController = function (myapp, $$) {
   
   // Init method
   (function () {
-
     var options = {
       'bgcolor': '#0da6ec',
       'fontcolor': '#fff',
@@ -20,9 +19,6 @@ myapp.pages.IndexPageController = function (myapp, $$) {
         console.log("welcome screen closed");
       }
     },
-      welcomescreen_slides,
-      welcomescreen;
-    
     welcomescreen_slides = [
       {
         id: 'slide0',
@@ -44,9 +40,7 @@ myapp.pages.IndexPageController = function (myapp, $$) {
         picture: '<div class="tutorialicon">☆</div>',
         text: 'Thanks for reading! Enjoy this app or go to <a class="tutorial-previous-slide" href="#">previous slide</a>.<br><br><a class="tutorial-close-btn" href="#">End Tutorial</a>'
       }
-
-    ];
-
+    ],
     welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
     
     $$(document).on('click', '.tutorial-close-btn', function () {
