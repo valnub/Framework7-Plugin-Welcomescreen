@@ -52,7 +52,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
      * @private
      */
     function initSwiper() {
-      swiper = new Swiper('.swiper-container', {
+      swiper = new Swiper('.welcomescreen-swiper', {
         direction: 'horizontal',
         loop: options.loop,
         pagination: options.pagination ? swiperContainer.find('.swiper-pagination') : undefined
@@ -83,7 +83,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
           '{{#if options.closeButton}}' +
           '<div class="welcomescreen-closebtn close-welcomescreen">{{options.closeButtonText}}</div>' +
           '{{/if}}' +
-          '<div class="welcomescreen-swiper swiper-container">' +
+          '<div class="welcomescreen-swiper">' +
             '<div class="swiper-wrapper">' +
               '{{#each slides}}' +
               '<div class="swiper-slide" {{#if id}}id="{{id}}"{{/if}}>' +
@@ -147,7 +147,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
      */
     self.open = function () {
       container = $$(template({options: options, slides: slides}));
-      swiperContainer = container.find('.swiper-container');
+      swiperContainer = container.find('.welcomescreen-swiper');
       setColors();
       $$('body').append(container);
       initSwiper();
