@@ -55,7 +55,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       swiper = new Swiper('.welcomescreen-swiper', {
         direction: 'horizontal',
         loop: options.loop,
-        pagination: options.pagination ? swiperContainer.find('.swiper-pagination') : undefined,
+        pagination: options.pagination ? swiperContainer.find('.swiper-pagination') : undefined
       });
     }
     
