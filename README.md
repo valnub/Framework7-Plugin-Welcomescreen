@@ -30,13 +30,11 @@ var welcomescreen_slides = [
   {
     id: 'slide0',
     picture: '<div class="tutorialicon">♥</div>',
-    title: 'Welcomescreen intro',
     text: 'Welcome to this tutorial. In the next steps we will guide you through a manual that will teach you how to use this app.'
   },
   {
     id: 'slide1',
     picture: '<div class="tutorialicon">✲</div>',
-    title: 'This is title 2',
     text: 'This is slide 2'
   },
   {
@@ -56,7 +54,6 @@ Parameters
 
 - *id* Set an id for this slide
 - *picture* Set free html here
-- *title* Set a text or html of slide title here (optional)
 - *text* You *can* set html here but I recommend using just plain text
 
 3) Initialize & options

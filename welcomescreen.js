@@ -93,9 +93,6 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
         '{{#if picture}}' +
         '<div class="welcomescreen-picture">{{picture}}</div>' +
         '{{/if}}' +
-        '{{#if title}}' +
-        '<div class="welcomescreen-title">{{title}}</div>' +
-        '{{/if}}' +
         '{{#if text}}' +
         '<div class="welcomescreen-text">{{text}}</div>' +
         '{{/if}}' +

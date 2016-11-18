@@ -32,18 +32,6 @@
   margin-top: 30%;
 }
 
-.welcomescreen-title {
-  position:absolute;
-  bottom: 140px;
-  left: 0;
-  right: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align:center;
-  font-size: x-large;
-  font-weight: 700;
-}
-
 .welcomescreen-text {
   position:absolute;
   bottom: 65px;
