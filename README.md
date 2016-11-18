@@ -56,6 +56,7 @@ Parameters
 
 - *id* Set an id for this slide
 - *picture* Set free html here
+- *title* Set a text or html of slide title here (optional)
 - *text* You *can* set html here but I recommend using just plain text
 
 3) Initialize & options
