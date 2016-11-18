@@ -55,7 +55,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       swiper = new Swiper('.welcomescreen-swiper', {
         direction: 'horizontal',
         loop: options.loop,
-        pagination: options.pagination ? swiperContainer.find('.swiper-pagination') : undefined
+        pagination: options.pagination ? swiperContainer.find('.swiper-pagination') : undefined,
       });
     }
     
@@ -81,7 +81,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
     function defineDefaultTemplate() {
       defaultTemplate = '<div class="welcomescreen-container {{#if options.cssClass}}{{options.cssClass}}{{/if}}">' +
           '{{#if options.closeButton}}' +
-          '<div class="welcomescreen-closebtn close-welcomescreen">{{options.closeButtonText}}</div>' +
+          '<a class="welcomescreen-closebtn close-welcomescreen" href="#" style="color: {{options.fontcolor}}">{{options.closeButtonText}}</a>' +
           '{{/if}}' +
           '<div class="welcomescreen-swiper">' +
             '<div class="swiper-wrapper">' +
