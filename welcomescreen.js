@@ -80,30 +80,30 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
      */
     function defineDefaultTemplate() {
       defaultTemplate = '<div class="welcomescreen-container {{#if options.cssClass}}{{options.cssClass}}{{/if}}">' +
-        '{{#if options.closeButton}}' +
-        '<div class="welcomescreen-closebtn close-welcomescreen">{{options.closeButtonText}}</div>' +
-        '{{/if}}' +
-        '<div class="welcomescreen-swiper">' +
-        '<div class="swiper-wrapper">' +
-        '{{#each slides}}' +
-        '<div class="swiper-slide" {{#if id}}id="{{id}}"{{/if}}>' +
-        '{{#if content}}' +
-        '<div class="welcomescreen-content">{{content}}</div>' +
-        '{{else}}' +
-        '{{#if picture}}' +
-        '<div class="welcomescreen-picture">{{picture}}</div>' +
-        '{{/if}}' +
-        '{{#if text}}' +
-        '<div class="welcomescreen-text">{{text}}</div>' +
-        '{{/if}}' +
-        '{{/if}}' +
-        '</div>' +
-        '{{/each}}' +
-        '</div>' +
-        '{{#if options.pagination}}' +
-        '<div class="welcomescreen-pagination swiper-pagination"></div>' +
-        '{{/if}}' +
-        '</div>' +
+          '{{#if options.closeButton}}' +
+          '<div class="welcomescreen-closebtn close-welcomescreen">{{options.closeButtonText}}</div>' +
+          '{{/if}}' +
+          '<div class="welcomescreen-swiper">' +
+            '<div class="swiper-wrapper">' +
+              '{{#each slides}}' +
+              '<div class="swiper-slide" {{#if id}}id="{{id}}"{{/if}}>' +
+                '{{#if content}}' +
+                  '<div class="welcomescreen-content">{{content}}</div>' +
+                '{{else}}' +
+                  '{{#if picture}}' +
+                    '<div class="welcomescreen-picture">{{picture}}</div>' +
+                  '{{/if}}' +
+                  '{{#if text}}' +
+                    '<div class="welcomescreen-text">{{text}}</div>' +
+                  '{{/if}}' +
+                '{{/if}}' +
+              '</div>' +
+              '{{/each}}' +
+            '</div>' +
+            '{{#if options.pagination}}' +
+            '<div class="welcomescreen-pagination swiper-pagination"></div>' +
+            '{{/if}}' +
+          '</div>' +
         '</div>';
     }
 
