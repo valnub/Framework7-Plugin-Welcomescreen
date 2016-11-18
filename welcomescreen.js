@@ -21,7 +21,6 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
     var $wscreen = $$(this).parents('.welcomescreen-container');
     if ($wscreen.length > 0 && $wscreen[0].f7Welcomescreen) { $wscreen[0].f7Welcomescreen.close(); }
   });
-  
   /**
    * Represents the welcome screen
    *
@@ -92,6 +91,9 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
                 '{{else}}' +
                   '{{#if picture}}' +
                     '<div class="welcomescreen-picture">{{picture}}</div>' +
+                  '{{/if}}' +
+                  '{{#if title}}' +
+                    '<div class="welcomescreen-title">{{title}}</div>'+
                   '{{/if}}' +
                   '{{#if text}}' +
                     '<div class="welcomescreen-text">{{text}}</div>' +
