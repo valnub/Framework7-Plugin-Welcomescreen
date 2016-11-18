@@ -155,6 +155,16 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       initSwiper();
       container[0].f7Welcomescreen = self;
       if (typeof options.onOpened === 'function') { options.onOpened(); }
+      $$(document).on("keydown", function(e) {
+        switch (e.which) {
+          case 39:
+            self.next();
+            break;
+          case 37:
+            self.previous();
+            break;
+        }
+      });
     };
 
     /**
