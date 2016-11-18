@@ -28,7 +28,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
    * @memberof module:Framework7/prototype/plugins/welcomescreen
    */
   Welcomescreen = function (slides, options) {
-    
+
     // Private properties
     var self = this,
       defaultTemplate,
@@ -38,14 +38,14 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       swiperContainer,
       defaults = {
         closeButton: true,        // enabled/disable close button
-        closeButtonText : 'Skip', // close button text
+        closeButtonText: 'Skip', // close button text
         cssClass: '',             // additional class on container
         pagination: true,         // swiper pagination
         loop: false,              // swiper loop
         open: true,               // open welcome screen on init
         keyboardControl: true     //allows the slide to be changed using left and right arrow key
       };
-    
+
     /**
      * Initializes the swiper
      *
@@ -58,7 +58,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
         pagination: options.pagination ? swiperContainer.find('.swiper-pagination') : undefined
       });
     }
-    
+
     /**
      * Sets colors from options
      *
@@ -72,7 +72,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
         });
       }
     }
-    
+
     /**
      * Sets the default template
      *
@@ -80,36 +80,36 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
      */
     function defineDefaultTemplate() {
       defaultTemplate = '<div class="welcomescreen-container {{#if options.cssClass}}{{options.cssClass}}{{/if}}">' +
-          '{{#if options.closeButton}}' +
-          '<div class="welcomescreen-closebtn close-welcomescreen">{{options.closeButtonText}}</div>' +
-          '{{/if}}' +
-          '<div class="welcomescreen-swiper">' +
-            '<div class="swiper-wrapper">' +
-              '{{#each slides}}' +
-              '<div class="swiper-slide" {{#if id}}id="{{id}}"{{/if}}>' +
-                '{{#if content}}' +
-                  '<div class="welcomescreen-content">{{content}}</div>' +
-                '{{else}}' +
-                  '{{#if picture}}' +
-                    '<div class="welcomescreen-picture">{{picture}}</div>' +
-                  '{{/if}}' +
-                  '{{#if title}}' +
-                    '<div class="welcomescreen-title">{{title}}</div>'+
-                  '{{/if}}' +
-                  '{{#if text}}' +
-                    '<div class="welcomescreen-text">{{text}}</div>' +
-                  '{{/if}}' +
-                '{{/if}}' +
-              '</div>' +
-              '{{/each}}' +
-            '</div>' +
-            '{{#if options.pagination}}' +
-            '<div class="welcomescreen-pagination swiper-pagination"></div>' +
-            '{{/if}}' +
-          '</div>' +
+        '{{#if options.closeButton}}' +
+        '<div class="welcomescreen-closebtn close-welcomescreen">{{options.closeButtonText}}</div>' +
+        '{{/if}}' +
+        '<div class="welcomescreen-swiper">' +
+        '<div class="swiper-wrapper">' +
+        '{{#each slides}}' +
+        '<div class="swiper-slide" {{#if id}}id="{{id}}"{{/if}}>' +
+        '{{#if content}}' +
+        '<div class="welcomescreen-content">{{content}}</div>' +
+        '{{else}}' +
+        '{{#if picture}}' +
+        '<div class="welcomescreen-picture">{{picture}}</div>' +
+        '{{/if}}' +
+        '{{#if title}}' +
+        '<div class="welcomescreen-title">{{title}}</div>' +
+        '{{/if}}' +
+        '{{#if text}}' +
+        '<div class="welcomescreen-text">{{text}}</div>' +
+        '{{/if}}' +
+        '{{/if}}' +
+        '</div>' +
+        '{{/each}}' +
+        '</div>' +
+        '{{#if options.pagination}}' +
+        '<div class="welcomescreen-pagination swiper-pagination"></div>' +
+        '{{/if}}' +
+        '</div>' +
         '</div>';
     }
-    
+
     /**
      * Sets the options that were required
      *
@@ -124,7 +124,25 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
         }
       }
     }
-    
+    /**
+     * This function controls the keyboard controls, it has to be  named function or .off() will not work 
+     * @private
+     */
+    function keyboardControl(event) {
+      switch (event.which) {
+        case 39:
+          if(swiper.isEnd){
+            self.close();
+          }
+          else  {
+            self.next();
+          }
+          break;
+        case 37:
+          self.previous();
+          break;
+      }
+    }
     /**
      * Compiles the template
      *
@@ -141,7 +159,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
         template = t7.compile(options.template);
       }
     }
-    
+
     /**
      * Shows the welcome screen
      *
@@ -149,7 +167,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
      * @memberof module:Framework7/prototype/plugins/welcomescreen
      */
     self.open = function () {
-      container = $$(template({options: options, slides: slides}));
+      container = $$(template({ options: options, slides: slides }));
       swiperContainer = container.find('.welcomescreen-swiper');
       setColors();
       $$('body').append(container);
@@ -157,17 +175,7 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       container[0].f7Welcomescreen = self;
       if (typeof options.onOpened === 'function') { options.onOpened(); }
       if (options.keyboardControl) {
-        $$(document).on("keydown", function(e) {
-          console.log("even listner activated");
-          switch (e.which) {
-            case 39:
-              self.next();
-              break;
-            case 37:
-              self.previous();
-              break;
-          }
-        });
+        $$(document).on("keydown", keyboardControl)
       }
     };
 
@@ -182,39 +190,40 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       if (container) { container.remove(); }
       container = swiperContainer = swiper = undefined;
       if (typeof options.onClosed === 'function') { options.onClosed(); }
+      $$(document).off("keydown", keyboardControl)
     };
-    
-   /**
-     * Shows the next slide
-     *
-     * @public
-     * @memberof module:Framework7/prototype/plugins/welcomescreen
-     */
+
+    /**
+      * Shows the next slide
+      *
+      * @public
+      * @memberof module:Framework7/prototype/plugins/welcomescreen
+      */
     self.next = function () {
       if (swiper) { swiper.slideNext(); }
     };
-    
-   /**
-     * Shows the previous slide
-     *
-     * @public
-     * @memberof module:Framework7/prototype/plugins/welcomescreen
-     */
+
+    /**
+      * Shows the previous slide
+      *
+      * @public
+      * @memberof module:Framework7/prototype/plugins/welcomescreen
+      */
     self.previous = function () {
       if (swiper) { swiper.slidePrev(); }
     };
-    
-   /**
-     * Goes to the desired slide
-     *
-     * @param {number} index The slide to show
-     * @public
-     * @memberof module:Framework7/prototype/plugins/welcomescreen
-     */
+
+    /**
+      * Goes to the desired slide
+      *
+      * @param {number} index The slide to show
+      * @public
+      * @memberof module:Framework7/prototype/plugins/welcomescreen
+      */
     self.slideTo = function (index) {
       if (swiper) { swiper.slideTo(index); }
     };
-    
+
     /**
      * Initialize the instance
      *
@@ -224,20 +233,20 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       defineDefaultTemplate();
       compileTemplate();
       applyOptions();
-      
+
       // Open on init
       if (options.open) {
         self.open();
       }
-      
-    }());
-    
+
+    } ());
+
     // Return instance
     return self;
   };
-  
+
   app.welcomescreen = function (slides, options) {
     return new Welcomescreen(slides, options);
   };
-  
+
 };

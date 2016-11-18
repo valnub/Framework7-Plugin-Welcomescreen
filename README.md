@@ -82,6 +82,7 @@ Available options (if not set, default will be used)
 - **open** (Default: true) Open welcome screen on init
 - **onOpened** (Default: none) Callback function when welcomescreen is opened
 - **onClosed** (Default: none) Callback function when welcomescreen is closed
+- **keyboardControl** (Default: true) Enable/Disable change of slide using keyboard arrow keys
 
 ## API
 
