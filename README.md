@@ -97,3 +97,5 @@ welcomescreen.slideTo(i); // Go to slide with index i
 Thanks to Vladi for improvements http://www.idangero.us
 
 Made with <3 by www.timo-ernst.net
+
+My YouTube channel about Framework7: http://youtube.com/xvalmar
