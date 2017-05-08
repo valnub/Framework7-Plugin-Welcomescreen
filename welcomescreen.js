@@ -43,7 +43,16 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
         cssClass: '',             // additional class on container
         pagination: true,         // swiper pagination
         loop: false,              // swiper loop
-        open: true                // open welcome screen on init
+        open: true,               // open welcome screen on init
+        parallax: false,          // adds parallax capabilities
+        parallaxSpeed: 600,       // parallax default speed
+        parallaxBackgroundImage: 'http://lorempixel.com/900/600/nightlife/2/', // parallax default background image
+        parallaxBackground: '-23%', // parallax default background effect
+        parallaxSlideElements: {
+            title: -100, 
+            subtitle: -300, 
+            text: -500
+        }
       };
     
     /**
@@ -55,7 +64,9 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
       swiper = new Swiper('.welcomescreen-swiper', {
         direction: 'horizontal',
         loop: options.loop,
-        pagination: options.pagination ? swiperContainer.find('.swiper-pagination') : undefined
+        pagination: options.pagination ? swiperContainer.find('.swiper-pagination') : undefined, 
+        parallax: options.parallax, 
+        speed: options.parallaxSpeed
       });
     }
     
@@ -84,21 +95,24 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
           '<div class="welcomescreen-closebtn close-welcomescreen">{{options.closeButtonText}}</div>' +
           '{{/if}}' +
           '<div class="welcomescreen-swiper">' +
-            '<div class="swiper-wrapper">' +
-              '{{#each slides}}' +
-              '<div class="swiper-slide" {{#if id}}id="{{id}}"{{/if}}>' +
-                '{{#if content}}' +
-                  '<div class="welcomescreen-content">{{content}}</div>' +
-                '{{else}}' +
-                  '{{#if picture}}' +
-                    '<div class="welcomescreen-picture">{{picture}}</div>' +
-                  '{{/if}}' +
-                  '{{#if text}}' +
-                    '<div class="welcomescreen-text">{{text}}</div>' +
-                  '{{/if}}' +
-                '{{/if}}' +
-              '</div>' +
-              '{{/each}}' +
+            '{{#if options.parallax}}<div class="parallax-bg" style="background-image:url({{options.parallaxBackgroundImage}})" data-swiper-parallax="{{options.parallaxBackground}}"></div>{{/if}}' +
+                '<div class="swiper-wrapper">' +
+                  '{{#each slides}}' +
+                  '<div class="swiper-slide" {{#if id}}id="{{id}}"{{/if}}>' +
+                    '<div class="welcomescreen-title {{#unless title}}hide-title{{/unless}}" data-swiper-parallax="{{#if parallaxTitle}}{{parallaxTitle}}{{else}}{{../../../../options.parallaxSlideElements.title}}{{/if}}">{{#if title}}{{title}}{{else}}title{{/if}}</div>' +
+                    '{{#if content}}' +
+                      '<div class="welcomescreen-content">{{content}}</div>' +
+                    '{{else}}' +
+                      '{{#if picture}}' +
+                        '<div class="welcomescreen-picture" data-swiper-parallax="{{#if parallaxPicture}}{{parallaxPicture}}{{else}}{{../../../../options.parallaxSlideElements.subtitle}}{{/if}}">{{picture}}</div>' +
+                      '{{/if}}' +
+                      '{{#if text}}' +
+                        '<div class="welcomescreen-text" data-swiper-parallax="{{#if parallaxText}}{{parallaxText}}{{else}}{{../../../../options.parallaxSlideElements.text}}{{/if}}">{{text}}</div>' +
+                      '{{/if}}' +
+                    '{{/if}}' +
+                  '</div>' +
+                  '{{/each}}' +
+                '</div>' +
             '</div>' +
             '{{#if options.pagination}}' +
             '<div class="welcomescreen-pagination swiper-pagination"></div>' +

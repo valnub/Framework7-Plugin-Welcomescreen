@@ -26,10 +26,16 @@
   height: 100%;
 }
 
+.welcomescreen-title{
+  width: 100%;
+  text-align: center;
+  margin-top: 20%;
+}
+
 .welcomescreen-picture{
   width: 100%;
   text-align: center;
-  margin-top: 30%;
+  margin-top: 20%;
 }
 
 .welcomescreen-text {
@@ -59,4 +65,22 @@
 
 html.with-statusbar-overlay .welcomescreen-container{
     top: 20px;
+}
+
+/*
+    Parallax Background Effect
+*/
+.parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.hide-title {
+    opacity: 0;
 }
