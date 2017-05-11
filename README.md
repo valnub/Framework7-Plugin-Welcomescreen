@@ -29,21 +29,25 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 var welcomescreen_slides = [
   {
     id: 'slide0',
+    title: 'Slide 0', // optional
     picture: '<div class="tutorialicon">♥</div>',
     text: 'Welcome to this tutorial. In the next steps we will guide you through a manual that will teach you how to use this app.'
   },
   {
     id: 'slide1',
+    title: 'Slide 1', // optional
     picture: '<div class="tutorialicon">✲</div>',
     text: 'This is slide 2'
   },
   {
     id: 'slide2',
+    title: 'Slide 2', // optional
     picture: '<div class="tutorialicon">♫</div>',
     text: 'This is slide 3'
   },
   {
     id: 'slide3',
+    //title: 'NO TITLE', 
     picture: '<div class="tutorialicon">☆</div>',
     text: 'Thanks for reading! Enjoy this app.<br><br><a id="tutorial-close-btn" href="#">End Tutorial</a>'
   }
@@ -79,6 +83,10 @@ Available options (if not set, default will be used)
 - **open** (Default: true) Open welcome screen on init
 - **onOpened** (Default: none) Callback function when welcomescreen is opened
 - **onClosed** (Default: none) Callback function when welcomescreen is closed
+- **parallax** (Default: true), Enable parallax
+- **parallaxBackgroundImage** (Default: 'http://lorempixel.com/900/600/nightlife/2/') Parallax default background image
+- **parallaxBackground** (Default: '-23%') Parallax default background speed effect
+- **parallaxSlideElements** (Default: {title: -100, subtitle: -200, text: -300}) Set speed of each element in parallax mode
 
 ## API
 
