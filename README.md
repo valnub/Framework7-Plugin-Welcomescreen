@@ -85,8 +85,12 @@ Available options (if not set, default will be used)
 - **onClosed** (Default: none) Callback function when welcomescreen is closed
 - **parallax** (Default: true), Enable parallax
 - **parallaxBackgroundImage** (Default: 'http://lorempixel.com/900/600/nightlife/2/') Parallax default background image
-- **parallaxBackground** (Default: '-23%') Parallax default background speed effect
-- **parallaxSlideElements** (Default: {title: -100, subtitle: -200, text: -300}) Set speed of each element in parallax mode
+- **parallaxBackground** (Default **percentage**: '-23%') Parallax default background speed effect
+- **parallaxSlideElements** (Default **number** per element: {title: -100, subtitle: -200, text: -300}) Set speed of each element in parallax mode
+
+### Note:
+- **number** - value in px (as for title, subtitle in example above) to move element depending on progress. In this case such element will be moved on ± this value in px depending on slide position (next or previous)
+- **percentage** - (as for "parallax-bg") to move element depending on progress and on its size. In this case such element will be moved on ± this percentage of its size (width in horizontal direction, and height in vertical direction) depending on slide position (next or previous). So if element has 400px width and you specified data-swiper-parallax="50%" then it will be moved on ± 200px
 
 ## API
 
