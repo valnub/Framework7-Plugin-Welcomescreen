@@ -79,6 +79,7 @@ Available options (if not set, default will be used)
 - **closeButtonText** (Default: 'Skip') Close button text
 - **cssClass** (Default: '') Additional class on container
 - **pagination** (Default: true) Swiper pagination
+- **navigation** (Default: false) Swiper navigation
 - **loop** (Default: false) Swiper loop
 - **open** (Default: true) Open welcome screen on init
 - **onOpened** (Default: none) Callback function when welcomescreen is opened
