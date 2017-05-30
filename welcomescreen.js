@@ -41,7 +41,8 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
         closeButton: true,        // enabled/disable close button
         closeButtonText : 'Skip', // close button text
         cssClass: '',             // additional class on container
-        pagination: true,         // swiper pagination
+        pagination: true,         // swiper pagination, 
+        navigation: false,        // swiper navigation
         loop: false,              // swiper loop
         open: true,               // open welcome screen on init
         parallax: false,          // adds parallax capabilities
@@ -113,10 +114,15 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
                   '</div>' +
                   '{{/each}}' +
                 '</div>' +
+                '{{#if options.pagination}}' +
+                '<div class="welcomescreen-pagination swiper-pagination"></div>' +
+                '{{/if}}' +
+                '{{#if options.navigation}}' +
+                '<!-- If we need navigation buttons -->' + 
+                '<div class="welcomescreen-navigation-prev swiper-button-prev"></div>' + 
+                '<div class="welcomescreen-navigation-next swiper-button-next"></div>' + 
+                '{{/if}}' +
             '</div>' +
-            '{{#if options.pagination}}' +
-            '<div class="welcomescreen-pagination swiper-pagination"></div>' +
-            '{{/if}}' +
           '</div>' +
         '</div>';
     }
