@@ -81,6 +81,7 @@ Available options (if not set, default will be used)
 - **pagination** (Default: true) Swiper pagination
 - **navigation** (Default: false) Swiper navigation
 - **loop** (Default: false) Swiper loop
+- **template** (Default: String) Pass in a custom Dom7 template to render Welcomescreen
 - **open** (Default: true) Open welcome screen on init
 - **onOpened** (Default: none) Callback function when welcomescreen is opened
 - **onClosed** (Default: none) Callback function when welcomescreen is closed
