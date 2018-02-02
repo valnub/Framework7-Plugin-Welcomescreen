@@ -1,6 +1,3 @@
-/*jslint browser: true*/
-/*global console, Framework7, alert, Dom7, Swiper, Template7*/
-
 /**
  * A plugin for Framework7 to show a slideable welcome screen
  *
@@ -8,27 +5,17 @@
  * @author www.timo-ernst.net
  * @license MIT
  */
-Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) {
-  'use strict';
-  // Variables in module scope
-  var $$ = Dom7,
-    t7 = Template7,
-    Welcomescreen;
+var Framework7WelcomescreenPlugin = {
+  // Module Name
+  name: 'welcomescreen',
 
-  // Click handler to close welcomescreen
-  $$(document).on('click', '.close-welcomescreen', function (e) {
-    e.preventDefault();
-    var $wscreen = $$(this).parents('.welcomescreen-container');
-    if ($wscreen.length > 0 && $wscreen[0].f7Welcomescreen) { $wscreen[0].f7Welcomescreen.close(); }
-  });
-  
   /**
    * Represents the welcome screen
    *
    * @class
    * @memberof module:Framework7/prototype/plugins/welcomescreen
    */
-  Welcomescreen = function (slides, options) {
+  Welcomescreen: function (app, slides, options) {
 
     // Private properties
     var self = this,
@@ -149,13 +136,9 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
      */
     function compileTemplate() {
       if (!options.template) {
-        // Cache compiled templates
-        if (!app._compiledTemplates.welcomescreen) {
-          app._compiledTemplates.welcomescreen = t7.compile(defaultTemplate);
-        }
-        template = app._compiledTemplates.welcomescreen;
+        template = Template7.compile(defaultTemplate);
       } else {
-        template = t7.compile(options.template);
+        template = Template7.compile(options.template);
       }
     }
     
@@ -166,10 +149,10 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
      * @memberof module:Framework7/prototype/plugins/welcomescreen
      */
     self.open = function () {
-      container = $$(template({options: options, slides: slides}));
+      container = Dom7(template({options: options, slides: slides}));
       swiperContainer = container.find('.welcomescreen-swiper');
       setColors();
-      $$('body').append(container);
+      Dom7('body').append(container);
       initSwiper();
       container[0].f7Welcomescreen = self;
       if (typeof options.onOpened === 'function') { options.onOpened(); }
@@ -238,10 +221,30 @@ Framework7.prototype.plugins.welcomescreen = function (app, globalPluginParams) 
     
     // Return instance
     return self;
-  };
-  
-  app.welcomescreen = function (slides, options) {
-    return new Welcomescreen(slides, options);
-  };
-  
+  },
+
+  params: {
+    welcomescreen: {
+      options: {},
+      slides: [],
+    }
+  },
+
+  /* Event handlers */
+  on: {
+    init() {
+      // Click handler to close welcomescreen
+      Dom7(document).on('click', '.close-welcomescreen', function (e) {
+        e.preventDefault();
+        var $wscreen = Dom7(this).parents('.welcomescreen-container');
+        if ($wscreen.length > 0 && $wscreen[0].f7Welcomescreen) { $wscreen[0].f7Welcomescreen.close(); }
+      });
+
+      var app = this;
+      var params = app.params.welcomescreen;
+      app.welcomescreen = new Framework7WelcomescreenPlugin.Welcomescreen(app, params.slides, params.options);
+    },
+  },
 };
+
+// new Welcomescreen(slides, options);
