@@ -1,12 +1,6 @@
 # Framework7 Plugin Welcomescreen
 
-### Compatibility
-- v1: Yes
-- v2: No
-
-## Just a quick plugin for Framework 7
-
-This will display a fullscreen swipeable modal window to guide the user through a welcome screen (as requested here http://www.idangero.us/framework7/forum/#!/framework7/feature-requests%23request-centered-large-mod).
+This plugin will display a fullscreen swipeable modal window to guide the user through a welcome screen (as requested here http://www.idangero.us/framework7/forum/#!/framework7/feature-requests%23request-centered-large-mod).
 
 (Note: There is also a generic version that does not rely on Framework7 available here: https://github.com/valnub/welcomescreen-mobile)
 
@@ -18,13 +12,27 @@ This will display a fullscreen swipeable modal window to guide the user through 
 
 http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
+### Framework 7 compatibility
+- V1: No
+- V2: Yes
+
+F7 | Compatible?
+----------
+V1 (1.x) | No
+V2 (2.x) | Yes
+
+| F7 version    | Compatible?  | Note
+| ------------- |:-----------: | -----
+| V1 (1.x)      | No           | [See old V1 version](https://github.com/valnub/Framework7-Plugin-Welcomescreen/releases/tag/1.0)
+| V2 (2.x)      | Yes          |
+
 ## Setup
 
-1) Copy welcomescreen.css and welcomescreen.js to your project and reference them:
+1) Copy framework7.welcomescreen.css and framework7.welcomescreen.js to your project and reference them:
 
 ```html
-<link rel="stylesheet" href="welcomescreen.css">
-<script src="welcomescreen.js"></script>
+<link rel="stylesheet" href="framework7.welcomescreen.css">
+<script src="framework7.welcomescreen.js"></script>
 ```
 
 2) Define slides
@@ -67,12 +75,23 @@ Parameters
 3) Initialize & options
 
 ```javascript
-var myapp = new Framework7();
+Framework7.use(Framework7WelcomescreenPlugin);
+
+// Define options for welcomescreen plugin
 var options = {
   'bgcolor': '#0da6ec',
   'fontcolor': '#fff'
 }
-var welcomescreen = myapp.welcomescreen(welcomescreen_slides, options);
+
+var app = new Framework7({
+  root: '#app', // or what ever your root is
+  name: 'welcomescreen-demo', // choose a name
+  id: 'de.timoernst.f7.welcomescreen', // Pick an id
+  welcomescreen: { // Setup welcomescreen plugin
+    slides: welcomescreen_slides,
+    options: options,
+  },
+});
 ```
 
 Available options (if not set, default will be used)
@@ -103,16 +122,14 @@ Available options (if not set, default will be used)
 The following methods are available on a welcomescreen instance
 
 ```javascript
-welcomescreen.open();         // Open the screen
-welcomescreen.close();        // Closes it
-welcomescreen.next();         // Go to next slide
-welcomescreen.previous();     // Go to previous slide
-welcomescreen.slideTo(i); // Go to slide with index i
+app.welcomescreen.open();         // Open the screen
+app.welcomescreen.close();        // Closes it
+app.welcomescreen.next();         // Go to next slide
+app.welcomescreen.previous();     // Go to previous slide
+app.welcomescreen.slideTo(i);     // Go to slide with index i
 ```
 
 ## Credits
-
-Thanks to Vladi for improvements http://www.idangero.us
 
 Made with <3 by www.timo-ernst.net
 
