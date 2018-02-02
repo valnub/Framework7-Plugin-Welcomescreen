@@ -6,7 +6,7 @@ This plugin will show a tutorial screen when starting [Framework7](http://www.fr
 
 ## Screenshot
 
-![Welcome screen](https://raw.githubusercontent.com/valnub/Framework7-Plugin-Welcomescreen/master/screens/screen1.png)
+![Welcome screen](https://raw.githubusercontent.com/valnub/Framework7-Plugin-Welcomescreen/master/screens/screen1.jpg)
 
 ## Live demo
 
