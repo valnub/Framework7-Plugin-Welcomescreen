@@ -1,6 +1,6 @@
 # Framework7 Plugin Welcomescreen
 
-This plugin will display a fullscreen swipeable modal window to guide the user through a welcome screen (as requested [here](http://www.idangero.us/framework7/forum/#!/framework7/feature-requests%23request-centered-large-mod)).
+This plugin will display a fullscreen swipeable modal window to guide the user through a welcome screen for [Framework7](http://www.framework7.io) apps.
 
 (Note: There is also a generic version that does not rely on Framework7 [available](https://github.com/valnub/welcomescreen-mobile))
 
