@@ -12,14 +12,11 @@ This plugin will show a tutorial screen when starting [Framework7](http://www.fr
 
 http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
-### Framework 7 compatibility
-- V1: No
-- V2: Yes
+## Example code
 
-F7 | Compatible?
-----------
-V1 (1.x) | No
-V2 (2.x) | Yes
+See [example](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/example) directory.
+
+## Framework 7 compatibility
 
 | F7 version    | Compatible?  | Note
 | ------------- |:-----------: | -----
