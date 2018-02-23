@@ -10,7 +10,7 @@
   "author": "Timo Ernst",
   "license": "MIT",
   "dependencies": {
-    "f7-welcomescreen": "^2.1.0-beta"
+    "f7-welcomescreen": "https://github.com/valnub/Framework7-Plugin-Welcomescreen.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

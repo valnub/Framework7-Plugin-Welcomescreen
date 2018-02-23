@@ -1,3 +1,168 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_f7_welcomescreen__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_f7_welcomescreen___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_f7_welcomescreen__);
+
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+  var options = {
+    'bgcolor': '#0da6ec',
+    'fontcolor': '#fff', 
+
+    // Parallax example – Remove comments to test it out:
+
+    // parallax: true|false, 
+    // parallaxBackgroundImage: 'http://lorempixel.com/900/600/nightlife/2/', // parallax default background image
+    // parallaxBackground: '-23%', // parallax default background effect
+    /* parallaxSlideElements: {
+          title: -100, 
+          subtitle: -300, 
+          text: -500
+      }, */
+
+    'onOpened': function () {
+      console.log("welcome screen opened");
+    },
+    'onClosed': function () {
+      console.log("welcome screen closed");
+    }
+  };
+
+  var welcomescreen_slides = [
+    {
+      id: 'slide0', 
+      title: 'Slide 1', 
+      picture: '<div class="tutorialicon">♥</div>',
+      text: 'Welcome to this tutorial. In the <a class="tutorial-next-link" href="#">next steps</a> we will guide you through a manual that will teach you how to use this app.<br><br>Swipe to continue →'
+    },
+    {
+      id: 'slide1',
+      title: 'Slide 2', 
+      picture: '<div class="tutorialicon">✲</div>',
+      text: 'This is slide 2<br><br>Swipe to continue →'
+    },
+    {
+      id: 'slide2',
+      title: 'Slide 3', 
+      picture: '<div class="tutorialicon">♫</div>',
+      text: 'This is slide 3<br><br>Swipe to continue →'
+    },
+    {
+      id: 'slide3',
+      // title: 'NO TITLE', 
+      picture: '<div class="tutorialicon">☆</div>',
+      text: 'Thanks for reading! Enjoy this app or go to <a class="tutorial-previous-slide" href="#">previous slide</a>.<br><br><a class="tutorial-close-btn" href="#">End Tutorial</a>'
+    } 
+  ];
+
+  // Tell F7 to use the plugin
+  Framework7.use(__WEBPACK_IMPORTED_MODULE_0_f7_welcomescreen___default.a);
+
+  // Initialize Framework7 + plugin
+  var app = new Framework7({
+    root: '#app',
+    name: 'welcomescreen-demo',
+    id: 'de.timoernst.f7.welcomescreen',
+    welcomescreen: {
+      slides: welcomescreen_slides,
+      options: options,
+    },
+  });
+
+  var mainView = app.views.create('.view-main');
+  
+  Dom7(document).on('click', '.tutorial-close-btn', function () {
+    app.welcomescreen.close();
+  });
+
+  Dom7('.tutorial-open-btn').click(function () {
+    app.welcomescreen.open();  
+  });
+  
+  Dom7(document).on('click', '.tutorial-next-link', function (e) {
+    app.welcomescreen.next(); 
+  });
+  
+  Dom7(document).on('click', '.tutorial-previous-slide', function (e) {
+    app.welcomescreen.previous(); 
+  });
+
+});
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
 /**
  * A plugin for Framework7 to show a slideable welcome screen
  *
@@ -257,7 +422,11 @@ module.exports = {
 
       var app = this;
       var params = app.params.welcomescreen;
-      app.welcomescreen = new this.Welcomescreen(app, params.slides, params.options);
+      app.welcomescreen = new Framework7WelcomescreenPlugin.Welcomescreen(app, params.slides, params.options);
     },
   },
 };
+
+
+/***/ })
+/******/ ]);
