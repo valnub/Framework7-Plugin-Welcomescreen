@@ -14,7 +14,7 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
 ## Example code
 
-See [example](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/example) directory.
+See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/demo) directory. Open `index.html` there.
 
 ## Framework 7 compatibility
 
@@ -23,13 +23,18 @@ See [example](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/mas
 | V1 (1.x)      | No           | [See old V1 version](https://github.com/valnub/Framework7-Plugin-Welcomescreen/releases/tag/1.0)
 | V2 (2.x)      | Yes          |
 
-## Setup
+## Install
 
-1) Copy framework7.welcomescreen.css and framework7.welcomescreen.js to your project and reference them:
+1) Add dependency
 
-```html
-<link rel="stylesheet" href="framework7.welcomescreen.css">
-<script src="framework7.welcomescreen.js"></script>
+```shell
+npm install f7-welcomescreen
+```
+
+Then import it in your javascript file:
+
+```javascript
+import welcomescreen from 'f7-welcomescreen';
 ```
 
 2) Define slides
@@ -72,7 +77,7 @@ Parameters
 3) Initialize & options
 
 ```javascript
-Framework7.use(Framework7WelcomescreenPlugin);
+Framework7.use(welcomescreen);
 
 // Define options for welcomescreen plugin
 var options = {
@@ -83,7 +88,6 @@ var options = {
 var app = new Framework7({
   root: '#app', // or what ever your root is
   name: 'welcomescreen-demo', // choose a name
-  id: 'de.timoernst.f7.welcomescreen', // Pick an id
   welcomescreen: { // Setup welcomescreen plugin
     slides: welcomescreen_slides,
     options: options,
