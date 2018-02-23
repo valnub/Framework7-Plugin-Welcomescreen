@@ -14,7 +14,7 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
 ## Example code
 
-See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/demo) directory. Open `index.html` there.
+See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/demo) directory. Open `dist/index.html` there.
 
 ## Install
 
