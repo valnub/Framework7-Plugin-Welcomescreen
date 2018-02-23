@@ -5,7 +5,7 @@
  * @author www.timo-ernst.net
  * @license MIT
  */
-module.exports = {
+var F7WelcomescreenPlugin = {
   // Module Name
   name: 'welcomescreen',
 
@@ -257,7 +257,9 @@ module.exports = {
 
       var app = this;
       var params = app.params.welcomescreen;
-      app.welcomescreen = new this.Welcomescreen(app, params.slides, params.options);
+      app.welcomescreen = new F7WelcomescreenPlugin.Welcomescreen(app, params.slides, params.options);
     },
   },
 };
+
+module.exports = F7WelcomescreenPlugin;

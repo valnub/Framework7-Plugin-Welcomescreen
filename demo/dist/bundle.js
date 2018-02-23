@@ -422,7 +422,7 @@ module.exports = {
 
       var app = this;
       var params = app.params.welcomescreen;
-      app.welcomescreen = new Framework7WelcomescreenPlugin.Welcomescreen(app, params.slides, params.options);
+      app.welcomescreen = new this.Welcomescreen(app, params.slides, params.options);
     },
   },
 };
