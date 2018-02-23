@@ -57,13 +57,13 @@ var welcomescreen_slides = [
 ];
 ```
 
-Parameters
+Used parameters are:
 
 - `id` Set an id for this slide
 - `picture` Set free html here
 - `text` You *can* set html here but I recommend using just plain text
 
-3) Initialize & options
+### 3. Initialize & options
 
 ```javascript
 Framework7.use(welcomescreen);
