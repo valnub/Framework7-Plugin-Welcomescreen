@@ -12,13 +12,9 @@ This plugin will show a tutorial screen when starting [Framework7](http://www.fr
 
 http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
-## Example code
-
-See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/demo) directory. Open `dist/index.html` there.
-
 ## Install
 
-1) Add dependency
+### 1. Add dependency
 
 ```shell
 npm install f7-welcomescreen
@@ -30,7 +26,7 @@ Then import it in your javascript file:
 import welcomescreen from 'f7-welcomescreen';
 ```
 
-2) Define slides
+### 2. Define slides
 
 ```javascript
 var welcomescreen_slides = [
@@ -122,6 +118,10 @@ app.welcomescreen.next();         // Go to next slide
 app.welcomescreen.previous();     // Go to previous slide
 app.welcomescreen.slideTo(i);     // Go to slide with index i
 ```
+
+## Example
+
+See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/demo) directory. Open `dist/index.html` there.
 
 ## Framework 7 compatibility
 
