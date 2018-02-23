@@ -1,0 +1,16 @@
+{
+  "name": "f7-welcomescreen",
+  "version": "2.1.0-beta",
+  "description": "This Framework7 plugin will guide the user through a tour of your app.",
+  "main": "src/f7.welcomescreen.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valnub/Framework7-Plugin-Welcomescreen.git"
+  },
+  "author": "Timo Ernst",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valnub/Framework7-Plugin-Welcomescreen/issues"
+  },
+  "homepage": "https://github.com/valnub/Framework7-Plugin-Welcomescreen"
+}

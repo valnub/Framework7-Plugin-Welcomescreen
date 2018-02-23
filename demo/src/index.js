@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
+import welcomescreen from 'f7-welcomescreen';
 
+document.addEventListener("DOMContentLoaded", function(event) { 
   var options = {
     'bgcolor': '#0da6ec',
     'fontcolor': '#fff', 
@@ -50,8 +51,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     } 
   ];
 
-  Framework7.use(Framework7WelcomescreenPlugin);
+  // Tell F7 to use the plugin
+  Framework7.use(welcomescreen);
 
+  // Initialize Framework7 + plugin
   var app = new Framework7({
     root: '#app',
     name: 'welcomescreen-demo',

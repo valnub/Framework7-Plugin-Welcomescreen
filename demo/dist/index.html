@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Color theme for statusbar -->
     <meta name="theme-color" content="#2196f3">
-    <!-- Your app title -->
     <title>Welcomescreen demo | Framework7</title>
-    <!-- Path to Framework7 Library CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/2.0.7/css/framework7.min.css">
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="../framework7.welcomescreen.css">
+
+    <!-- Custom styles -->
+    <style>
+      .tutorialicon {
+        font-size: 250px;
+        line-height: 170px;
+      }
+
+      .tutorial-close-btn {
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        color: #0da6ec;
+      }
+
+      .welcomescreen-container .welcomescreen-text a{
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      .tutorial-close-btn {
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        color: #0da6ec !important;
+        text-decoration: none !important;
+      }
+
+      .page-content {
+        padding: 20px;
+      }
+    </style>
   </head>
 
   <body>
@@ -44,8 +69,6 @@
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/framework7/2.0.7/js/framework7.min.js"></script>
-    <script type="text/javascript" src="../framework7.welcomescreen.js"></script>
-    <script type="text/javascript" src="init.js"></script>
-
+    <script type="text/javascript" src="bundle.js"></script>
   </body>
 </html>

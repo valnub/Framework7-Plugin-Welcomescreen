@@ -1,3 +1,7 @@
+/*
+  Note: The content of this file must be manually minified and added to
+  f7.welcomescreen.js and assign the result to the variable "css".
+*/
 .welcomescreen-container {
   position: absolute;
   top: 0;
