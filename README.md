@@ -16,13 +16,6 @@ http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
 
 See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/demo) directory. Open `index.html` there.
 
-## Framework 7 compatibility
-
-| F7 version    | Compatible?  | Note
-| ------------- |:-----------: | -----
-| V1 (1.x)      | No           | [See old V1 version](https://github.com/valnub/Framework7-Plugin-Welcomescreen/releases/tag/1.0)
-| V2 (2.x)      | Yes          |
-
 ## Install
 
 1) Add dependency
@@ -129,6 +122,13 @@ app.welcomescreen.next();         // Go to next slide
 app.welcomescreen.previous();     // Go to previous slide
 app.welcomescreen.slideTo(i);     // Go to slide with index i
 ```
+
+## Framework 7 compatibility
+
+| F7 version    | Compatible?  | Note
+| ------------- |:-----------: | -----
+| V1 (1.x)      | No           | [See old V1 version](https://github.com/valnub/Framework7-Plugin-Welcomescreen/releases/tag/1.0)
+| V2 (2.x)      | Yes          |
 
 ## Credits
 
