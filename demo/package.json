@@ -10,11 +10,11 @@
   "author": "Timo Ernst",
   "license": "MIT",
   "dependencies": {
-    "f7-welcomescreen": "^2.1.0-beta"
+    "f7-welcomescreen": "^2.1.1-beta"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "webpack": "^3.10.0"
   }
