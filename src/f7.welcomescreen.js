@@ -52,7 +52,7 @@ var F7WelcomescreenPlugin = {
       swiper = new Swiper('.welcomescreen-swiper', {
         direction: 'horizontal',
         loop: options.loop,
-        pagination: options.pagination ? swiperContainer.find('.swiper-pagination') : undefined, 
+        pagination: options.pagination ? { el: '.swiper-pagination' } : undefined,
         parallax: options.parallax, 
         speed: options.parallaxSpeed
       });
