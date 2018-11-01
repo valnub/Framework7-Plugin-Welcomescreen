@@ -214,7 +214,7 @@ var F7WelcomescreenPlugin = {
      * @private
      */
     function initSwiper() {
-      swiper = new Swiper('.welcomescreen-swiper', {
+      swiper = window.swiper.create('.welcomescreen-swiper', {
         direction: 'horizontal',
         loop: options.loop,
         pagination: options.pagination ? { el: '.swiper-pagination' } : undefined,
@@ -415,6 +415,8 @@ var F7WelcomescreenPlugin = {
     init() {
       window.Dom7 = this.$;
       window.Template7 = this.t7;
+      window.swiper = this.swiper;
+
       // Click handler to close welcomescreen
       window.Dom7(document).on('click', '.close-welcomescreen', function (e) {
         e.preventDefault();
