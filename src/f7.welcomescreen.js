@@ -23,6 +23,7 @@ var F7WelcomescreenPlugin = {
       template,
       container,
       swiper,
+      Dom7,
       swiperContainer,
       defaults = {
         closeButton: true,        // enabled/disable close button
@@ -149,6 +150,7 @@ var F7WelcomescreenPlugin = {
      * @memberof module:Framework7/prototype/plugins/welcomescreen
      */
     self.open = function () {
+      var Dom7 = self.Dom7;
       container = Dom7(template({options: options, slides: slides}));
       swiperContainer = container.find('.welcomescreen-swiper');
       setColors();
@@ -248,10 +250,11 @@ var F7WelcomescreenPlugin = {
   /* Event handlers */
   on: {
     init() {
+      self.Dom7 = this.$;
       // Click handler to close welcomescreen
-      Dom7(document).on('click', '.close-welcomescreen', function (e) {
+      self.Dom7(document).on('click', '.close-welcomescreen', function (e) {
         e.preventDefault();
-        var $wscreen = Dom7(this).parents('.welcomescreen-container');
+        var $wscreen = self.Dom7(this).parents('.welcomescreen-container');
         if ($wscreen.length > 0 && $wscreen[0].f7Welcomescreen) { $wscreen[0].f7Welcomescreen.close(); }
       });
 
