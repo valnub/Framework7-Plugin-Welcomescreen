@@ -301,9 +301,9 @@ var F7WelcomescreenPlugin = {
      */
     function compileTemplate() {
       if (!options.template) {
-        template = Template7.compile(defaultTemplate);
+        template = window.Template7.compile(defaultTemplate);
       } else {
-        template = Template7.compile(options.template);
+        template = window.Template7.compile(options.template);
       }
     }
     
@@ -314,10 +314,10 @@ var F7WelcomescreenPlugin = {
      * @memberof module:Framework7/prototype/plugins/welcomescreen
      */
     self.open = function () {
-      container = Dom7(template({options: options, slides: slides}));
+      container = window.Dom7(template({options: options, slides: slides}));
       swiperContainer = container.find('.welcomescreen-swiper');
       setColors();
-      Dom7('body').append(container);
+      window.Dom7('body').append(container);
       initSwiper();
       container[0].f7Welcomescreen = self;
       if (typeof options.onOpened === 'function') { options.onOpened(); }
@@ -413,10 +413,12 @@ var F7WelcomescreenPlugin = {
   /* Event handlers */
   on: {
     init() {
+      window.Dom7 = this.$;
+      window.Template7 = this.t7;
       // Click handler to close welcomescreen
-      Dom7(document).on('click', '.close-welcomescreen', function (e) {
+      window.Dom7(document).on('click', '.close-welcomescreen', function (e) {
         e.preventDefault();
-        var $wscreen = Dom7(this).parents('.welcomescreen-container');
+        var $wscreen = window.Dom7(this).parents('.welcomescreen-container');
         if ($wscreen.length > 0 && $wscreen[0].f7Welcomescreen) { $wscreen[0].f7Welcomescreen.close(); }
       });
 
