@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx webpack src/index.js dist/bundle.js"
+    "build": "npx webpack src/index.js --output dist/bundle.js"
   },
   "author": "Timo Ernst",
   "license": "MIT",
   "dependencies": {
-    "f7-welcomescreen": "^2.1.4"
+    "f7-welcomescreen": "^2.1.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
