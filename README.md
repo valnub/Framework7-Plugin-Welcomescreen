@@ -17,7 +17,7 @@ You can find a running demo [here](http://www.timo-ernst.net/misc/f7-plugin-welc
 ### 1. Add dependency
 
 ```shell
-yarn add f7-welcomescreen
+$ yarn add f7-welcomescreen
 ```
 
 Then import it in your javascript file:
@@ -125,9 +125,9 @@ app.welcomescreen.slideTo(i); // Go to slide with index i
 
 See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/demo) directory. The demo has the following scripts:
 
-- yarn start: Starts a http server and serves content from `demo/build`
-- yarn build: Creates a new build into the `demo/build` directory
-- yarn watch: Watches for changes in .js files and runs `yarn build`
+- `yarn start` Starts a http server and serves content from `demo/build`
+- `yarn build` Creates a new build into the `demo/build` directory
+- `yarn watch` Watches for changes in .js files and runs `yarn build`
 
 I recommend to just run `yarn start` from the demo directory. Then open http://127.0.0.1:8080 in your browser.
 
