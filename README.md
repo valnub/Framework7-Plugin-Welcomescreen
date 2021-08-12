@@ -22,7 +22,7 @@ $ yarn add f7-welcomescreen
 
 Then import it in your javascript file:
 
-```javascript
+```
 import F7WelcomescreenPlugin from 'f7-welcomescreen';
 ```
 
