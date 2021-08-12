@@ -10,7 +10,7 @@ This plugin will show a tutorial screen when starting [Framework7](http://www.fr
 
 ## Live demo
 
-http://www.timo-ernst.net/misc/f7-plugin-welcomescreen
+You can find a running demo [here](http://www.timo-ernst.net/misc/f7-plugin-welcomescreen).
 
 ## Install
 
@@ -23,7 +23,7 @@ yarn add f7-welcomescreen
 Then import it in your javascript file:
 
 ```javascript
-import welcomescreen from 'f7-welcomescreen';
+import F7WelcomescreenPlugin from 'f7-welcomescreen';
 ```
 
 ### 2. Define slides
@@ -66,7 +66,7 @@ Used parameters are:
 ### 3. Initialize & options
 
 ```javascript
-Framework7.use(welcomescreen);
+Framework7.use(F7WelcomescreenPlugin);
 
 // Define options for welcomescreen plugin
 var options = {
@@ -121,19 +121,18 @@ app.welcomescreen.previous(); // Go to previous slide
 app.welcomescreen.slideTo(i); // Go to slide with index i
 ```
 
-## Example
+## Example project
 
-See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/demo) directory. Open `dist/index.html` there.
+See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master/demo) directory. The demo has the following scripts:
 
-## Framework 7 compatibility
+- yarn start: Starts a http server and serves content from `demo/build`
+- yarn build: Creates a new build into the `demo/build` directory
+- yarn watch: Watches for changes in .js files and runs `yarn build`
 
-| F7 version | Compatible? | Note                                                                                             |
-| ---------- | :---------: | ------------------------------------------------------------------------------------------------ |
-| V1 (1.x)   |     No      | [See old V1 version](https://github.com/valnub/Framework7-Plugin-Welcomescreen/releases/tag/1.0) |
-| V2+        |     Yes     |
+I recommend to just run `yarn start` from the demo directory. Then open http://127.0.0.1:8080 in your browser.
 
 ## Credits
 
 Made with <3 by www.timo-ernst.net
 
-My YouTube channel about Framework7: http://youtube.com/xvalmar
+My YouTube channel about Framework7: http://www.timoernst.tv

@@ -1,0 +1,35 @@
+@import '~framework7/framework7-bundle.min.css';
+@import '~f7-welcomescreen/dist/main.css';
+
+#app {
+  height: 100%;
+}
+
+.page-content {
+  padding: 64px 20px 20px 20px;
+}
+
+.tutorialicon {
+  font-size: 250px;
+  line-height: 170px;
+}
+
+.tutorial-close-btn {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  color: #0da6ec;
+}
+
+.welcomescreen-container .welcomescreen-text a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.tutorial-close-btn {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  color: #0da6ec !important;
+  text-decoration: none !important;
+}
