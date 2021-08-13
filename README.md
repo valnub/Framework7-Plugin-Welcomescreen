@@ -46,7 +46,7 @@ For Vite
 ```
 <head>
   <link rel="stylesheet" href="f7-welcomescreen.min.css"></link>
-  <script src="f7-welcomescreen.min.js></script>
+  <script src="f7-welcomescreen.min.js"></script>
 </head>
 ```
 
