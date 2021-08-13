@@ -1,8 +1,6 @@
 # Framework7 Plugin Welcomescreen
 
-This plugin will show a tutorial screen when starting [Framework7](http://www.framework7.io) apps and websites.
-
-(Note: There is also a generic version that does not rely on Framework7 [available](https://github.com/valnub/welcomescreen-mobile))
+This plugin will show a tutorial screen when starting [Framework7](http://www.framework7.io) apps and websites. (Note: There is also a generic version that does not rely on Framework7 [available](https://github.com/valnub/welcomescreen-mobile))
 
 ## Screenshot
 
@@ -20,13 +18,22 @@ You can find a running demo [here](http://www.timo-ernst.net/misc/f7-plugin-welc
 $ yarn add f7-welcomescreen
 ```
 
-Then import it in your javascript file:
+### 2. Import
+
+In your main js file do:
 
 ```
 import F7WelcomescreenPlugin from 'f7-welcomescreen';
 ```
 
-### 2. Define slides
+Make sure you have css bundling in webpack enabled and import these stylesheets from your main css file:
+
+```
+@import '~framework7/framework7-bundle.min.css';
+@import '~f7-welcomescreen/dist/main.css';
+```
+
+### 3. Define slides
 
 ```javascript
 var welcomescreen_slides = [
@@ -63,7 +70,7 @@ Used parameters are:
 - `picture` Set free html here
 - `text` You _can_ set html here but I recommend using just plain text
 
-### 3. Initialize & options
+### 4. Initialize & options
 
 ```javascript
 Framework7.use(F7WelcomescreenPlugin);
@@ -131,8 +138,42 @@ See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master
 
 I recommend to just run `yarn start` from the demo directory. Then open http://127.0.0.1:8080 in your browser.
 
+## Troubleshooting
+
+If you have issues importing dependencies, try this configuration in your `webpack.config.js`:
+
+```
+plugins: [new MiniCssExtractPlugin()],
+module: {
+  rules: [
+    {
+      test: /\.m?js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        },
+      },
+    },
+    {
+      test: /\.css$/,
+      use: [MiniCssExtractPlugin.loader, 'css-loader'],
+    },
+  ],
+},
+```
+
+And make sure you have all loaders installed:
+
+```
+$ yarn add babel-loader @babel/preset-env MiniCssExtractPlugin css-loader
+```
+
 ## Credits
 
 Made with <3 by www.timo-ernst.net
 
 My YouTube channel about Framework7: http://www.timoernst.tv
+
+Thanks for helping [@nolimits4web](https://twitter.com/nolimits4web)
