@@ -1,6 +1,6 @@
 {
   "name": "f7-welcomescreen",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "description": "This Framework7 plugin will guide the user through a tour of your app.",
   "main": "index.js",
   "scripts": {

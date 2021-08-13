@@ -1947,9 +1947,9 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-f7-welcomescreen@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/f7-welcomescreen/-/f7-welcomescreen-3.0.6.tgz#3dae869a1ff1872b273133b70ec6986d9e8577c0"
+f7-welcomescreen@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/f7-welcomescreen/-/f7-welcomescreen-3.0.7.tgz#3dae869a1ff1872b273133b70ec6986d9e8577c0"
   integrity sha512-LjmEC537YhulDAlZEHuycZlRMSlPa5Ly/QHIBRuXENrY9njlFomTMMVL1Mp/iICbiclIClTViC5PARb9HfZh9Q==
   dependencies:
     css-minify "^2.0.0"
