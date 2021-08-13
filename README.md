@@ -84,6 +84,8 @@ Used parameters are:
 
 ### 4. Initialize & options
 
+#### For Framework7 Core version
+
 ```javascript
 Framework7.use(F7WelcomescreenPlugin);
 
@@ -102,6 +104,34 @@ var app = new Framework7({
     options: options,
   },
 });
+```
+
+#### For Framework7 React version
+
+app.js
+
+```javascript
+Framework7.use(F7WelcomescreenPlugin);
+```
+
+app.jsx
+
+```javascript
+var options = {
+  bgcolor: '#0da6ec',
+  fontcolor: '#fff',
+};
+
+const f7params = {
+  name: 'welcomescreen-demo',
+  theme: 'auto',
+  store: store,
+  routes: routes,
+  welcomescreen: {
+    slides: welcomescreen_slides,
+    options: options,
+  },
+};
 ```
 
 Available options (if not set, default will be used)

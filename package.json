@@ -1,11 +1,11 @@
 {
   "name": "f7-welcomescreen",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "This Framework7 plugin will guide the user through a tour of your app.",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "clean": "rm -Rf dist",
-    "build": "yarn clean && mkdir dist && babel src --out-file dist/f7-welcomescreen.min.js && css-minify -f src/main.css -o dist && mv dist/main.min.css dist/f7-welcomescreen.min.css"
+    "build": "yarn clean && mkdir dist && babel index.js --out-file dist/f7-welcomescreen.min.js && css-minify -f styles.css -o dist && mv dist/styles.min.css dist/f7-welcomescreen.min.css"
   },
   "repository": {
     "type": "git",
