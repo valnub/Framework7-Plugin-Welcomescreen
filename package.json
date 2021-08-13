@@ -1,11 +1,11 @@
 {
   "name": "f7-welcomescreen",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "This Framework7 plugin will guide the user through a tour of your app.",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -Rf dist",
-    "build": "yarn clean && webpack && cp src/main.css dist"
+    "build": "yarn clean && mkdir dist && babel src --out-file dist/f7-welcomescreen.min.js && css-minify -f src/main.css -o dist && mv dist/main.min.css dist/f7-welcomescreen.min.css"
   },
   "repository": {
     "type": "git",
@@ -18,14 +18,13 @@
   },
   "homepage": "https://github.com/valnub/Framework7-Plugin-Welcomescreen",
   "dependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "babel-loader": "^8.2.2",
+    "css-minify": "^2.0.0",
     "swiper": "^6.8.1",
-    "template7": "^1.4.2",
-    "webpack": "^5.50.0"
+    "template7": "^1.4.2"
   },
   "devDependencies": {
-    "webpack-cli": "^4.7.2"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.5.1"
   }
 }

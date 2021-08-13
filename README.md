@@ -14,11 +14,11 @@ You can find a running demo [here](http://www.timo-ernst.net/misc/f7-plugin-welc
 
 ### 1. Add dependency
 
+#### With module bundler (Webpack, Vite...)
+
 ```shell
 $ yarn add f7-welcomescreen
 ```
-
-### 2. Import
 
 In your main js file do:
 
@@ -26,11 +26,23 @@ In your main js file do:
 import F7WelcomescreenPlugin from 'f7-welcomescreen';
 ```
 
-Make sure you have css bundling in webpack enabled and import these stylesheets from your main css file:
+In your stylesheet do:
 
 ```
 @import '~framework7/framework7-bundle.min.css';
 @import '~f7-welcomescreen/dist/main.css';
+```
+
+#### Alternative: Without bundler (direct linking)
+
+1. Copy files `f7-welcomescreen.min.js` and `f7-welcomescreen.min.css` from `dist` into your project folder.
+2. Reference the files in HTML like this:
+
+```
+<head>
+  <link rel="stylesheet" href="f7-welcomescreen.min.css"></link>
+  <script src="f7-welcomescreen.min.js></script>
+</head>
 ```
 
 ### 3. Define slides
@@ -137,38 +149,6 @@ See [demo](https://github.com/valnub/Framework7-Plugin-Welcomescreen/tree/master
 - `yarn watch` Watches for changes in .js files and runs `yarn build`
 
 I recommend to just run `yarn start` from the demo directory. Then open http://127.0.0.1:8080 in your browser.
-
-## Troubleshooting
-
-If you have issues importing dependencies, try this configuration in your `webpack.config.js`:
-
-```
-plugins: [new MiniCssExtractPlugin()],
-module: {
-  rules: [
-    {
-      test: /\.m?js$/,
-      exclude: /(node_modules|bower_components)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-        },
-      },
-    },
-    {
-      test: /\.css$/,
-      use: [MiniCssExtractPlugin.loader, 'css-loader'],
-    },
-  ],
-},
-```
-
-And make sure you have all loaders installed:
-
-```
-$ yarn add babel-loader @babel/preset-env MiniCssExtractPlugin css-loader
-```
 
 ## Credits
 

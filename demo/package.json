@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.15.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
-    "f7-welcomescreen": "^3.0.3",
+    "f7-welcomescreen": "^3.0.4",
     "framework7": "^6.2.0",
     "http-server": "^13.0.0",
     "mini-css-extract-plugin": "^2.2.0",
