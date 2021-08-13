@@ -26,11 +26,16 @@ In your main js file do:
 import F7WelcomescreenPlugin from 'f7-welcomescreen';
 ```
 
-In your stylesheet do:
+In your stylesheet add F7 styles (if not exist yet!). This is when using Webpack:
 
 ```
-@import '~framework7/framework7-bundle.min.css';
-@import '~f7-welcomescreen/dist/main.css';
+@import '~f7-welcomescreen/styles.css';
+```
+
+For Vite
+
+```
+@import 'f7-welcomescreen/styles.css';
 ```
 
 #### Alternative: Without bundler (direct linking)
