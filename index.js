@@ -5,7 +5,10 @@ import Swiper from 'swiper';
 var F7WelcomescreenPlugin = {
   name: 'welcomescreen',
 
-  Welcomescreen: function (app, slides, options) {
+  Welcomescreen: function (app, slidesParam, optionsParam) {
+    var slides = slidesParam;
+    var options = optionsParam;
+
     // Private properties
     var self = this,
       defaultTemplate,
@@ -153,7 +156,10 @@ var F7WelcomescreenPlugin = {
       }
     };
 
-    (function () {
+    self.init = function (newSlides, newOptions) {
+      if (newSlides) slides = newSlides;
+      if (newOptions) options = newOptions;
+
       defineDefaultTemplate();
       compileTemplate();
       applyOptions();
@@ -162,7 +168,9 @@ var F7WelcomescreenPlugin = {
       if (options.open) {
         self.open();
       }
-    })();
+    };
+
+    self.init();
 
     // Return instance
     return self;
@@ -177,7 +185,7 @@ var F7WelcomescreenPlugin = {
 
   /* Event handlers */
   on: {
-    init: function () {
+    init: function (foo) {
       window.Dom7 = this.$;
       window.swiper = this.swiper;
 
