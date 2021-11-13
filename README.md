@@ -139,7 +139,31 @@ const f7params = {
 };
 ```
 
-Available options (if not set, default will be used)
+#### For Framework7 Vue version
+
+app.js
+
+```
+Framework7.use(F7WelcomescreenPlugin);
+
+const app = createApp(App);
+registerComponents(app);
+app.mount('#app');
+```
+
+In your component add parameters in `onMounted()` and initilize:
+
+```
+onMounted(() => {
+  f7ready((f7) => {
+    f7.welcomescreen.init(welcomescreen_slides, options);
+  });
+});
+```
+
+You can use same values for welcomescreen_slides and options as with React and Core version above.
+
+#### Available options (if not set, default will be used)
 
 - **bgcolor** Set background color
 - **fontcolor** Set font color
