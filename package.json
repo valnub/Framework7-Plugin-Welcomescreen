@@ -19,7 +19,7 @@
   "homepage": "https://github.com/valnub/Framework7-Plugin-Welcomescreen",
   "dependencies": {
     "css-minify": "^2.0.0",
-    "swiper": "^6.8.1",
+    "swiper": "^12.1.2",
     "template7": "^1.4.2"
   },
   "devDependencies": {
